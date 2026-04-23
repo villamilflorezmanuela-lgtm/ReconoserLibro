@@ -55,22 +55,12 @@ nav ul a:hover{color:var(--red)}
   color:var(--red);margin-bottom:20px}
 .hero-kicker::before{content:'';display:block;width:26px;height:2px;background:var(--red)}
 
-/* ── TÍTULO RECONOSER  (Recono + SER alineado abajo) ── */
+/* ── TÍTULO RECONOSER ── */
 .hero-title-wrap{margin-bottom:14px}
-h1.hero-title{
-  font-size:clamp(4rem,8vw,9rem);font-weight:700;color:var(--navy);
-  letter-spacing:-.01em;line-height:.92;
-  display:inline-block;
-}
-/* "RECONO" en una línea, "SER" en la siguiente con sangría para alinearse a la derecha */
+h1.hero-title{font-size:clamp(4rem,8vw,9rem);font-weight:700;color:var(--navy);
+  letter-spacing:-.01em;line-height:.92;display:inline-block}
 .t-recono{display:block}
-.t-ser{
-  display:block;
-  color:var(--red);
-  /* empuja SER para que arranque justo donde termina RECONO */
-  padding-left:.18em;
-  letter-spacing:.04em;
-}
+.t-ser{display:block;color:var(--red);padding-left:.18em;letter-spacing:.04em}
 
 .hero-sub{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
   color:var(--navy-l);margin-bottom:20px}
@@ -89,7 +79,6 @@ h1.hero-title{
 .hero-stat strong{display:block;font-family:'Libre Baskerville',serif;
   font-size:1.4rem;color:var(--navy);margin-bottom:2px}
 .hero-stat span{font-size:.68rem;color:var(--text-l);letter-spacing:.05em;text-transform:uppercase}
-
 .hero-right{height:100%;min-height:100vh;display:flex;align-items:center;
   justify-content:center;background:var(--cream2);
   border-left:1px solid rgba(28,45,80,.1);position:relative;z-index:2}
@@ -138,11 +127,60 @@ h1.hero-title{
   font-size:clamp(1.05rem,2vw,1.5rem);font-style:italic;color:var(--navy);
   line-height:1.65;border-left:4px solid var(--red);padding-left:24px;margin-bottom:22px}
 .libro-body{font-size:.96rem;line-height:1.9;color:var(--text-m);margin-bottom:14px}
-.destino-box{margin-top:24px;background:var(--cream);border:1px solid var(--border);
-  border-left:4px solid var(--navy);border-radius:0 3px 3px 0;padding:18px 22px}
-.destino-box strong{color:var(--navy);display:block;margin-bottom:4px;
-  font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
-.destino-box p{font-size:.82rem;line-height:1.7;color:var(--navy-m)}
+
+/* ── DESTINO BOX — más grande e impactante ── */
+.destino-box{
+  margin-top:32px;
+  background:var(--navy);
+  border-radius:4px;
+  padding:32px 36px;
+  position:relative;
+  overflow:hidden;
+}
+.destino-box::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(192,57,43,.18) 0%,transparent 60%);
+  pointer-events:none;
+}
+.destino-box::after{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--navy-m));
+}
+.destino-title{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(.75rem,.9vw,1rem);
+  font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red-l);
+  margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+  position:relative;z-index:1;
+}
+.destino-title::before{
+  content:'';display:block;width:20px;height:2px;background:var(--red-l);flex-shrink:0;
+}
+.destino-desc{
+  font-family:'Libre Baskerville',serif;
+  font-size:clamp(1.15rem,2vw,1.55rem);
+  font-weight:400;
+  color:#fff;
+  line-height:1.55;
+  position:relative;z-index:1;
+}
+.destino-names{
+  margin-top:14px;
+  display:flex;flex-wrap:wrap;gap:8px;
+  position:relative;z-index:1;
+}
+.destino-name-tag{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:2px;padding:6px 14px;
+  font-size:.78rem;font-weight:600;
+  letter-spacing:.06em;color:rgba(255,255,255,.75);
+}
+
 .libro-cards{display:flex;flex-direction:column;gap:14px}
 .libro-card{background:var(--cream);border-left:3px solid var(--navy);
   padding:20px 24px;border-radius:0 3px 3px 0;transition:border-color .2s,transform .25s}
@@ -167,7 +205,7 @@ h1.hero-title{
   color:var(--navy-m);margin-top:10px;padding-left:18px;
   border-left:3px solid var(--red);line-height:1.65}
 
-/* ── PREVENTA SECTION ── */
+/* ── PREVENTA ── */
 #preventa{background:var(--navy);overflow:hidden;position:relative}
 #preventa::before{content:'RECONOSER';position:absolute;
   font-family:'Libre Baskerville',serif;font-size:16vw;font-weight:700;
@@ -197,10 +235,27 @@ h1.hero-title{
 .benefit-item{display:flex;align-items:flex-start;gap:10px;
   font-size:.86rem;color:rgba(255,255,255,.55)}
 .benefit-item::before{content:'✓';color:var(--red);font-size:1rem;flex-shrink:0;margin-top:1px}
-.pills-row{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
-.pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
-  border-radius:30px;padding:5px 13px;font-size:.68rem;font-weight:500;
-  color:rgba(255,255,255,.5);letter-spacing:.04em}
+
+/* ── Bold badge (reemplaza los pills de pago) ── */
+.bold-badge{
+  display:inline-flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:3px;padding:12px 20px;
+  margin:22px 0;
+}
+.bold-badge .lock-icon{
+  font-size:1.3rem;
+  color:rgba(255,255,255,.7);
+  flex-shrink:0;
+}
+.bold-badge-text{display:flex;flex-direction:column;gap:2px}
+.bold-badge-text strong{
+  font-size:.85rem;font-weight:600;color:#fff;letter-spacing:.04em;
+}
+.bold-badge-text span{
+  font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.04em;
+}
 
 /* ── FORM ── */
 .form-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);
@@ -210,7 +265,6 @@ h1.hero-title{
   border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:8px}
 .fsec:first-child{margin-top:0;padding-top:0;border-top:none}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fgrid.full{grid-template-columns:1fr}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fg label{font-size:.73rem;font-weight:500;color:rgba(255,255,255,.52);letter-spacing:.04em}
 .fg label .req{color:var(--red-l);margin-left:2px}
@@ -381,7 +435,7 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
   <ul>
     <li><a href="#libro">El Libro</a></li>
     <li><a href="#autor">Autor</a></li>
-    <li><a href="#preventa" class="nav-cta">Comprar</a></li>
+    <li><a href="#preventa" class="nav-cta">Preventa</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -392,18 +446,16 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
 <section id="hero">
   <div class="hero-left">
     <div class="hero-kicker">Fondo Editorial Uniambiental · Colombia</div>
-
-    <!-- TÍTULO: Recono + SER alineado abajo-derecha -->
     <div class="hero-title-wrap">
       <h1 class="hero-title">
-        <span class="t-recono">RECONO</span><span class="t-ser">SER</span>
+        <span class="t-recono">RECONO</span>
+        <span class="t-ser">SER</span>
       </h1>
     </div>
-
     <p class="hero-sub">50 historias de testigos del servicio y liderazgo</p>
     <p class="hero-desc">Vivencias colectivas de mirar de frente, hacer presencia y quedarse. El servicio como acto de rebeldía silenciosa.</p>
     <div class="hero-cta-row">
-      <a href="#preventa" class="btn-n">Comprar mi libro →</a>
+      <a href="#preventa" class="btn-n">Preventa →</a>
       <span class="badge-pre">Preventa activa</span>
     </div>
     <div class="hero-stats">
@@ -433,11 +485,21 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
         </blockquote>
         <p class="libro-body reveal d3"><strong>RECONOSER</strong> recoge cincuenta historias de personas que han sido testigos y voceros de lo que significa el servicio en Colombia. Un libro sobre vivencias colectivas de mirar de frente, hacer presencia y quedarse.</p>
         <p class="libro-body reveal d3">Sobre el servicio no como obligación, sino como forma de reconocerse a uno mismo en el otro — y como acto de rebeldía silenciosa en un país que a veces castiga la ternura.</p>
+
+        <!-- DESTINO BOX — rediseñado, sin corazón, más impactante -->
         <div class="destino-box reveal d4">
-          <strong>💛 Los recursos del libro serán destinados a:</strong>
-          <p>Asociación Santa Cruz, Fundación Pasos por Amor y Fundación Reconoser.</p>
+          <div class="destino-title">Los recursos de este libro son destinados a</div>
+          <div class="destino-desc">
+            Cada libro que compras apoya directamente a tres organizaciones que transforman vidas en Colombia.
+          </div>
+          <div class="destino-names">
+            <span class="destino-name-tag">Asociación Santa Cruz</span>
+            <span class="destino-name-tag">Fundación Pasos por Amor</span>
+            <span class="destino-name-tag">Fundación Reconoser</span>
+          </div>
         </div>
-        <a href="#preventa" class="btn-n reveal d4" style="margin-top:24px;display:inline-flex;">Quiero mi libro →</a>
+
+        <a href="#preventa" class="btn-n reveal d4" style="margin-top:28px;display:inline-flex;">Quiero mi libro →</a>
       </div>
       <div class="libro-cards">
         <div class="libro-card reveal d2">
@@ -482,7 +544,6 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
 <section id="preventa">
   <div class="wrap">
     <div class="preventa-layout">
-
       <div>
         <div class="s-label reveal">Compra en preventa</div>
         <h2 class="s-title reveal d1">Este libro<br/>te espera.</h2>
@@ -494,25 +555,27 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
             <span class="price-total">por libro &nbsp;·&nbsp; Total: <strong id="precio-display">$65.000</strong> COP</span>
           </div>
         </div>
-        <div class="pills-row reveal d3">
-          <span class="pill">💳 Tarjeta</span>
-          <span class="pill">🏦 PSE</span>
-          <span class="pill">📱 Nequi</span>
-          <span class="pill">🔶 Daviplata</span>
-          <span class="pill">💰 Efectivo</span>
+
+        <!-- BOLD BADGE — reemplaza pills de pago -->
+        <div class="bold-badge reveal d3">
+          <span class="lock-icon">🔒</span>
+          <div class="bold-badge-text">
+            <strong>Pago seguro con Bold</strong>
+            <span>Tarjeta · PSE · Nequi · Daviplata · Efectivo</span>
+          </div>
         </div>
+
         <div class="benefits-list reveal d4">
           <div class="benefit-item">Libro físico con envío a todo Colombia</div>
           <div class="benefit-item">Dedicatoria personalizada por el autor (opcional)</div>
           <div class="benefit-item">Precio especial exclusivo de preventa</div>
-          <div class="benefit-item">Recursos destinados a fundaciones sociales</div>
+          <div class="benefit-item">Cada compra apoya fundaciones sociales en Colombia</div>
         </div>
       </div>
 
       <div class="form-box reveal d2">
         <form id="form-preventa" novalidate>
 
-          <!-- CANTIDAD -->
           <div class="fsec">📚 Cantidad de libros</div>
           <div class="qty-wrap">
             <button type="button" class="qty-btn" id="qty-minus" aria-label="Menos">−</button>
@@ -521,7 +584,6 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
             <span class="qty-note">máx. 20 por pedido</span>
           </div>
 
-          <!-- DATOS -->
           <div class="fsec">👤 Datos personales</div>
           <div class="fgrid">
             <div class="fg">
@@ -546,7 +608,6 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
             </div>
           </div>
 
-          <!-- ENTREGA -->
           <div class="fsec">📦 Modalidad de entrega</div>
           <div class="radio-group">
             <label class="rl">
@@ -575,7 +636,6 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
             </div>
           </div>
 
-          <!-- DEDICATORIAS -->
           <div class="fsec">✍️ Dedicatoria personalizada</div>
           <div class="radio-group">
             <label class="rl">
@@ -597,7 +657,7 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
             <span id="btn-txt">Pagar ahora — $65.000 COP</span>
             <span>→</span>
           </button>
-          <p class="secure-note">🔒 Pago seguro procesado por Bold · Tus datos están protegidos</p>
+          <p class="secure-note">🔒 Pago seguro con Bold · Datos protegidos</p>
         </form>
       </div>
     </div>
@@ -641,83 +701,62 @@ footer{background:var(--navy2);color:rgba(255,255,255,.42);padding:52px 72px 32p
 </footer>
 
 <script>
-/* ══════════════════════════════════════════
-   CONSTANTES
-══════════════════════════════════════════ */
 const PRECIO_UNIT = 65000;
 const BOLD_URL    = 'https://checkout.bold.co/payment/LNK_S9611YM8SX';
-
-const $ = id => document.getElementById(id);
+const $  = id => document.getElementById(id);
 const fmt = n => '$' + n.toLocaleString('es-CO');
 
-/* ── Nav shadow ── */
 window.addEventListener('scroll', () => {
   $('navbar').style.boxShadow = scrollY > 40 ? '0 4px 22px rgba(28,45,80,.13)' : 'none';
 });
 
-/* ── Hamburger ── */
 $('hamburger').addEventListener('click', () => {
   const ul = document.querySelector('nav ul');
   const open = ul.style.display === 'flex';
   ul.style.display = open ? 'none' : 'flex';
   if (!open) Object.assign(ul.style, {
-    flexDirection:'column', position:'absolute', top:'62px',
-    left:'0', right:'0', background:'var(--cream)',
-    padding:'22px 28px', borderBottom:'1px solid var(--border)',
-    gap:'18px', zIndex:'99', boxShadow:'0 8px 24px rgba(28,45,80,.1)'
+    flexDirection:'column',position:'absolute',top:'62px',left:'0',right:'0',
+    background:'var(--cream)',padding:'22px 28px',
+    borderBottom:'1px solid var(--border)',gap:'18px',zIndex:'99',
+    boxShadow:'0 8px 24px rgba(28,45,80,.1)'
   });
 });
 
-/* ── Scroll reveal ── */
 const ro = new IntersectionObserver(es => {
-  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
-}, {threshold:.1});
+  es.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);} });
+},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-/* ══════════════════════════════════════════
-   CANTIDAD
-══════════════════════════════════════════ */
-let qty = 1;
-let wantsDed = false;
-
-function updateQty(n) {
-  qty = Math.max(1, Math.min(20, n));
-  $('qty').value = qty;
-  $('precio-display').textContent = fmt(qty * PRECIO_UNIT);
-  $('btn-txt').textContent = `Pagar ahora — ${fmt(qty * PRECIO_UNIT)} COP`;
-  if (wantsDed) renderDedicatorias();
+/* CANTIDAD */
+let qty=1, wantsDed=false;
+function updateQty(n){
+  qty=Math.max(1,Math.min(20,n));
+  $('qty').value=qty;
+  $('precio-display').textContent=fmt(qty*PRECIO_UNIT);
+  $('btn-txt').textContent=`Pagar ahora — ${fmt(qty*PRECIO_UNIT)} COP`;
+  if(wantsDed) renderDedicatorias();
 }
+$('qty-minus').addEventListener('click',()=>updateQty(qty-1));
+$('qty-plus').addEventListener('click',()=>updateQty(qty+1));
 
-$('qty-minus').addEventListener('click', () => updateQty(qty - 1));
-$('qty-plus').addEventListener('click',  () => updateQty(qty + 1));
+function openC(el){el.classList.add('open')}
+function closeC(el){el.classList.remove('open')}
 
-/* ══════════════════════════════════════════
-   COLLAPSE HELPERS
-══════════════════════════════════════════ */
-function openC(el)  { el.classList.add('open'); }
-function closeC(el) { el.classList.remove('open'); }
+function toggleEnvio(val){val==='envio'?openC($('envio-fields')):closeC($('envio-fields'))}
 
-/* ── Envío fields ── */
-function toggleEnvio(val) {
-  val === 'envio' ? openC($('envio-fields')) : closeC($('envio-fields'));
-}
-
-/* ── Dedicatorias ── */
-function toggleDed(val) {
-  wantsDed = val === 'si';
-  wantsDed ? openC($('ded-wrap')) : closeC($('ded-wrap'));
+function toggleDed(val){
+  wantsDed=val==='si';
+  wantsDed?openC($('ded-wrap')):closeC($('ded-wrap'));
   renderDedicatorias();
 }
 
-function renderDedicatorias() {
-  const c = $('ded-container');
-  c.innerHTML = '';
-  if (!wantsDed) return;
-
-  for (let i = 1; i <= qty; i++) {
-    const d = document.createElement('div');
-    d.className = 'ded-card';
-    d.innerHTML = `
+function renderDedicatorias(){
+  const c=$('ded-container');c.innerHTML='';
+  if(!wantsDed)return;
+  for(let i=1;i<=qty;i++){
+    const d=document.createElement('div');
+    d.className='ded-card';
+    d.innerHTML=`
       <div class="ded-card-title">Libro ${i} de ${qty}</div>
       <div class="ded-row">
         <div class="fg">
@@ -736,206 +775,154 @@ function renderDedicatorias() {
   }
 }
 
-function toggleDedNombre(i, val) {
-  $(`ded-nb-${i}`).style.display = val === 'si' ? 'flex' : 'none';
+function toggleDedNombre(i,val){
+  $(`ded-nb-${i}`).style.display=val==='si'?'flex':'none';
 }
 
-/* ══════════════════════════════════════════
-   PERSISTENCIA
-══════════════════════════════════════════ */
-function saveOrder(record) {
-  try {
-    const prev = JSON.parse(localStorage.getItem('reconoser_orders') || '[]');
-    prev.push(record);
-    localStorage.setItem('reconoser_orders', JSON.stringify(prev));
-  } catch (_) {}
-  /* Google Sheets endpoint (opcional) */
-  if (window.SHEET_URL) {
-    fetch(window.SHEET_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(record)
-    }).catch(() => {});
+function saveOrder(record){
+  try{
+    const prev=JSON.parse(localStorage.getItem('reconoser_orders')||'[]');
+    prev.push(record);localStorage.setItem('reconoser_orders',JSON.stringify(prev));
+  }catch(_){}
+  if(window.SHEET_URL){
+    fetch(window.SHEET_URL,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'application/json'},body:JSON.stringify(record)
+    }).catch(()=>{});
   }
 }
 
-/* ══════════════════════════════════════════
-   SUBMIT
-══════════════════════════════════════════ */
-$('form-preventa').addEventListener('submit', function(e) {
+$('form-preventa').addEventListener('submit',function(e){
   e.preventDefault();
-  const msg = $('form-msg');
-  msg.style.display = 'none';
-
-  const nombre   = $('f-nombre').value.trim();
-  const email    = $('f-email').value.trim();
-  const pais     = $('f-pais').value.trim();
-  const ciudad   = $('f-ciudad').value.trim();
-  const telefono = $('f-telefono').value.trim();
-
-  if (!nombre || !email || !pais || !ciudad || !telefono) {
-    msg.textContent = '⚠️ Por favor completa todos los campos obligatorios.';
-    msg.className = 'form-msg err';
-    msg.style.display = 'block';
-    msg.scrollIntoView({behavior:'smooth', block:'center'});
-    return;
+  const msg=$('form-msg');msg.style.display='none';
+  const nombre=$('f-nombre').value.trim();
+  const email=$('f-email').value.trim();
+  const pais=$('f-pais').value.trim();
+  const ciudad=$('f-ciudad').value.trim();
+  const telefono=$('f-telefono').value.trim();
+  if(!nombre||!email||!pais||!ciudad||!telefono){
+    msg.textContent='⚠️ Por favor completa todos los campos obligatorios.';
+    msg.className='form-msg err';msg.style.display='block';
+    msg.scrollIntoView({behavior:'smooth',block:'center'});return;
   }
-
-  const entrega = document.querySelector('input[name="entrega"]:checked').value;
-  let direccion = '', barrio = '', departamento = '';
-
-  if (entrega === 'envio') {
-    direccion    = $('f-dir').value.trim();
-    barrio       = $('f-barrio').value.trim();
-    departamento = $('f-depto').value.trim();
-    if (!direccion || !barrio || !departamento) {
-      msg.textContent = '⚠️ Por favor completa los datos de envío.';
-      msg.className = 'form-msg err';
-      msg.style.display = 'block';
-      msg.scrollIntoView({behavior:'smooth', block:'center'});
-      return;
+  const entrega=document.querySelector('input[name="entrega"]:checked').value;
+  let direccion='',barrio='',departamento='';
+  if(entrega==='envio'){
+    direccion=$('f-dir').value.trim();
+    barrio=$('f-barrio').value.trim();
+    departamento=$('f-depto').value.trim();
+    if(!direccion||!barrio||!departamento){
+      msg.textContent='⚠️ Por favor completa los datos de envío.';
+      msg.className='form-msg err';msg.style.display='block';
+      msg.scrollIntoView({behavior:'smooth',block:'center'});return;
     }
   }
-
-  /* recolectar dedicatorias */
-  const deds = [];
-  for (let i = 1; i <= qty; i++) {
-    const tipo = $(`ded-tipo-${i}`);
-    if (tipo && tipo.value === 'si') {
-      const nom = $(`ded-n-${i}`);
-      deds.push(`Libro ${i}: ${nom ? nom.value.trim() || '(sin nombre)' : '(sin nombre)'}`);
+  const deds=[];
+  for(let i=1;i<=qty;i++){
+    const tipo=$(`ded-tipo-${i}`);
+    if(tipo&&tipo.value==='si'){
+      const nom=$(`ded-n-${i}`);
+      deds.push(`Libro ${i}: ${nom?nom.value.trim()||'(sin nombre)':'(sin nombre)'}`);
     }
   }
-
-  const record = {
-    id: Date.now(),
-    fecha: new Date().toLocaleString('es-CO', {timeZone:'America/Bogota'}),
-    nombre, email, pais, ciudad, telefono,
-    cantidad: qty,
-    total: qty * PRECIO_UNIT,
-    entrega, direccion, barrio, departamento,
-    dedicatorias: deds.length ? deds.join(' | ') : 'Sin dedicatoria'
+  const record={
+    id:Date.now(),
+    fecha:new Date().toLocaleString('es-CO',{timeZone:'America/Bogota'}),
+    nombre,email,pais,ciudad,telefono,
+    cantidad:qty,total:qty*PRECIO_UNIT,
+    entrega,direccion,barrio,departamento,
+    dedicatorias:deds.length?deds.join(' | '):'Sin dedicatoria'
   };
-
   saveOrder(record);
-
-  /* guardar en sessionStorage para el modal post-pago */
-  sessionStorage.setItem('reco_entrega', entrega);
-  sessionStorage.setItem('reco_email',   email);
-  sessionStorage.setItem('reco_nombre',  nombre);
-
-  const btn = $('btn-pagar');
-  btn.disabled = true;
-  $('btn-txt').textContent = 'Redirigiendo al pago…';
-
-  setTimeout(() => { window.location.href = BOLD_URL; }, 700);
+  sessionStorage.setItem('reco_entrega',entrega);
+  sessionStorage.setItem('reco_email',email);
+  sessionStorage.setItem('reco_nombre',nombre);
+  const btn=$('btn-pagar');
+  btn.disabled=true;$('btn-txt').textContent='Redirigiendo al pago…';
+  setTimeout(()=>{window.location.href=BOLD_URL;},700);
 });
 
-/* ══════════════════════════════════════════
-   MODAL POST-PAGO
-   Bold redirige a: tudominio.com/?pago=ok
-══════════════════════════════════════════ */
-function mostrarGracias() {
-  const entrega = sessionStorage.getItem('reco_entrega') || 'envio';
-  const email   = sessionStorage.getItem('reco_email')   || 'tu correo registrado';
-  const nombre  = sessionStorage.getItem('reco_nombre')  || '';
-  const first   = nombre.split(' ')[0] || '';
-
-  if (entrega === 'lanzamiento') {
-    $('g-icon').textContent  = '🎉';
-    $('g-titulo').textContent = `¡Listo, ${first}! Tu libro está reservado`;
-    $('g-msg').innerHTML = `
-      <strong>¡Gracias por ser parte de Reconoser!</strong><br/><br/>
+/* POST-PAGO MODAL */
+function mostrarGracias(){
+  const entrega=sessionStorage.getItem('reco_entrega')||'envio';
+  const email=sessionStorage.getItem('reco_email')||'tu correo registrado';
+  const nombre=sessionStorage.getItem('reco_nombre')||'';
+  const first=nombre.split(' ')[0]||'';
+  if(entrega==='lanzamiento'){
+    $('g-icon').textContent='🎉';
+    $('g-titulo').textContent=`¡Listo, ${first}! Tu libro está reservado`;
+    $('g-msg').innerHTML=`<strong>¡Gracias por ser parte de Reconoser!</strong><br/><br/>
       El día del lanzamiento tendrás tu libro en manos.<br/>
-      Te avisaremos con todos los detalles al correo<br/>
-      <em>${email}</em>.<br/><br/>
+      Te avisaremos con todos los detalles al correo <em>${email}</em>.<br/><br/>
       ¡Nos vemos pronto! 📖`;
-  } else {
-    $('g-icon').textContent  = '📬';
-    $('g-titulo').textContent = '¡Compra confirmada!';
-    $('g-msg').innerHTML = `
-      <strong>Tu pedido está en camino.</strong><br/><br/>
-      Recibirás un correo en <em>${email}</em>
-      con la información de envío y el número de guía para rastrear tu libro.<br/><br/>
-      ¿Tienes alguna duda? Escríbenos a
+  }else{
+    $('g-icon').textContent='📬';
+    $('g-titulo').textContent='¡Compra confirmada!';
+    $('g-msg').innerHTML=`<strong>Tu pedido está en camino.</strong><br/><br/>
+      Recibirás un correo en <em>${email}</em> con la información
+      de envío y el número de guía para rastrear tu libro.<br/><br/>
+      ¿Dudas? Escríbenos a
       <a href="mailto:leonelriveros98@gmail.com">leonelriveros98@gmail.com</a>
       o por <a href="https://wa.me/573132604508">WhatsApp</a>. 📦`;
   }
-
   $('modal-gracias').classList.add('show');
-  history.replaceState(null, '', window.location.pathname);
+  history.replaceState(null,'',window.location.pathname);
 }
-
-function cerrarGracias() {
+function cerrarGracias(){
   $('modal-gracias').classList.remove('show');
   sessionStorage.removeItem('reco_entrega');
   sessionStorage.removeItem('reco_email');
   sessionStorage.removeItem('reco_nombre');
 }
-
-/* detectar retorno desde Bold */
-(function() {
-  const p = new URLSearchParams(window.location.search);
-  if (p.get('pago') === 'ok' || window.location.hash === '#gracias') {
-    mostrarGracias();
-  }
+(function(){
+  const p=new URLSearchParams(window.location.search);
+  if(p.get('pago')==='ok'||window.location.hash==='#gracias') mostrarGracias();
 })();
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrarGracias();});
 
-/* cerrar modal con ESC */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') cerrarGracias();
-});
-
-/* init */
 updateQty(1);
 </script>
 
-<!-- ══ ADMIN PANEL (#admin) ══ -->
+<!-- ADMIN PANEL (#admin) -->
 <script>
 (function(){
-  if (window.location.hash !== '#admin') return;
-  document.body.insertAdjacentHTML('beforeend', `
+  if(window.location.hash!=='#admin')return;
+  document.body.insertAdjacentHTML('beforeend',`
   <div id="adm" style="position:fixed;inset:0;z-index:9999;background:#0f1a2e;color:#e0e8f0;font-family:sans-serif;overflow:auto;padding:32px">
     <div style="max-width:1150px;margin:0 auto">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;flex-wrap:wrap;gap:12px">
-        <h2 style="font-size:1.5rem;color:#fff">📋 Registros Preventa — <span style="color:#C0392B">RECONOSER</span></h2>
+        <h2 style="font-size:1.5rem;color:#fff">📋 Registros — <span style="color:#C0392B">RECONOSER</span></h2>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button onclick="xCSV()" style="background:#C0392B;color:#fff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase">⬇ CSV</button>
+          <button onclick="xCSV()" style="background:#C0392B;color:#fff;border:none;padding:9px 18px;border-radius:2px;cursor:pointer;font-size:.78rem;font-weight:700">⬇ CSV</button>
           <button onclick="xClear()" style="background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.12);padding:9px 18px;border-radius:2px;cursor:pointer;font-size:.78rem">🗑 Limpiar</button>
-          <a href="#" onclick="document.getElementById('adm').remove()" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:9px 18px;border-radius:2px;font-size:.78rem;text-decoration:none">✕ Cerrar</a>
+          <a href="#" onclick="document.getElementById('adm').remove()" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1);padding:9px 18px;border-radius:2px;font-size:.78rem;text-decoration:none">✕</a>
         </div>
       </div>
       <div id="adm-tbl"></div>
     </div>
   </div>`);
-
-  const COLS = ['fecha','nombre','email','pais','ciudad','telefono','cantidad','total','entrega','direccion','barrio','departamento','dedicatorias'];
-
-  function render() {
-    const data = JSON.parse(localStorage.getItem('reconoser_orders') || '[]');
-    const el = document.getElementById('adm-tbl');
-    if (!data.length) { el.innerHTML = '<p style="color:rgba(255,255,255,.3);margin-top:16px">Sin registros.</p>'; return; }
-    const H = COLS.map(c => `<th style="padding:9px 12px;background:rgba(255,255,255,.06);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.07);white-space:nowrap">${c}</th>`).join('');
-    const R = data.map(o => '<tr style="border-bottom:1px solid rgba(255,255,255,.05)">' + COLS.map(c => `<td style="padding:8px 12px;font-size:.78rem;color:rgba(255,255,255,.6);white-space:nowrap">${o[c]||'—'}</td>`).join('') + '</tr>').join('');
-    el.innerHTML = `<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr>${H}</tr></thead><tbody>${R}</tbody></table></div>
+  const COLS=['fecha','nombre','email','pais','ciudad','telefono','cantidad','total','entrega','direccion','barrio','departamento','dedicatorias'];
+  function render(){
+    const data=JSON.parse(localStorage.getItem('reconoser_orders')||'[]');
+    const el=document.getElementById('adm-tbl');
+    if(!data.length){el.innerHTML='<p style="color:rgba(255,255,255,.3);margin-top:16px">Sin registros.</p>';return;}
+    const H=COLS.map(c=>`<th style="padding:9px 12px;background:rgba(255,255,255,.06);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);border-bottom:1px solid rgba(255,255,255,.07);white-space:nowrap">${c}</th>`).join('');
+    const R=data.map(o=>'<tr style="border-bottom:1px solid rgba(255,255,255,.05)">'+COLS.map(c=>`<td style="padding:8px 12px;font-size:.78rem;color:rgba(255,255,255,.6);white-space:nowrap">${o[c]||'—'}</td>`).join('')+'</tr>').join('');
+    el.innerHTML=`<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr>${H}</tr></thead><tbody>${R}</tbody></table></div>
       <p style="margin-top:12px;font-size:.7rem;color:rgba(255,255,255,.22)">${data.length} registro(s) · Total: <strong style="color:#D9534F">${data.reduce((s,o)=>s+(o.total||0),0).toLocaleString('es-CO')}</strong> COP</p>`;
   }
   render();
-
-  window.xCSV = () => {
-    const data = JSON.parse(localStorage.getItem('reconoser_orders') || '[]');
-    if (!data.length) return;
-    const csv = [COLS.join(','), ...data.map(o => COLS.map(c => '"' + (o[c]||'') + '"').join(','))].join('\n');
-    const a = document.createElement('a');
-    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
-    a.download = 'reconoser_' + Date.now() + '.csv';
-    a.click();
+  window.xCSV=()=>{
+    const data=JSON.parse(localStorage.getItem('reconoser_orders')||'[]');
+    if(!data.length)return;
+    const csv=[COLS.join(','),...data.map(o=>COLS.map(c=>'"'+(o[c]||'')+'"').join(','))].join('\n');
+    const a=document.createElement('a');
+    a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+    a.download='reconoser_'+Date.now()+'.csv';a.click();
   };
-  window.xClear = () => {
-    if (confirm('¿Eliminar todos los registros?')) { localStorage.removeItem('reconoser_orders'); render(); }
+  window.xClear=()=>{
+    if(confirm('¿Eliminar todos los registros?')){localStorage.removeItem('reconoser_orders');render();}
   };
 })();
 </script>
-
 </body>
 </html>
